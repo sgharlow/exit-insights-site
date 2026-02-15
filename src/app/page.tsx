@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-white text-gray-900">
@@ -42,6 +44,12 @@ export default function Home() {
             See How It Works
           </a>
         </div>
+        <p className="mt-4 text-sm text-gray-400">
+          <Link href="/sample" className="text-gray-500 underline hover:text-gray-700">
+            View a sample package
+          </Link>{" "}
+          from a fictional employee departure.
+        </p>
       </section>
 
       {/* Problem Stats */}
@@ -377,14 +385,26 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-12 text-center text-sm text-gray-400">
         <p>&copy; 2026 Exit Insights. All rights reserved.</p>
-        <p className="mt-2">
+        <div className="mt-3 flex items-center justify-center gap-4">
+          <Link href="/sample" className="transition hover:text-gray-600">
+            Sample Package
+          </Link>
+          <span>|</span>
+          <Link href="/terms" className="transition hover:text-gray-600">
+            Terms
+          </Link>
+          <span>|</span>
+          <Link href="/privacy" className="transition hover:text-gray-600">
+            Privacy
+          </Link>
+          <span>|</span>
           <a
             href="mailto:sgharlow@gmail.com"
-            className="text-gray-500 transition hover:text-gray-700"
+            className="transition hover:text-gray-600"
           >
-            sgharlow@gmail.com
+            Contact
           </a>
-        </p>
+        </div>
       </footer>
     </div>
   );
