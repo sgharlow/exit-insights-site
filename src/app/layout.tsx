@@ -12,15 +12,33 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = "https://exit-insights-site.vercel.app";
+
 export const metadata: Metadata = {
   title: "Exit Insights — AI-Powered Employee Knowledge Transfer",
   description:
     "Stop losing institutional knowledge when employees leave. Exit Insights captures undocumented expertise from digital artifacts and delivers a structured knowledge transfer package.",
+  metadataBase: new URL(siteUrl),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Exit Insights — AI-Powered Employee Knowledge Transfer",
     description:
       "42% of institutional knowledge walks out the door when an employee leaves. Exit Insights captures it before they go.",
     type: "website",
+    url: siteUrl,
+    siteName: "Exit Insights",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Exit Insights — AI-Powered Employee Knowledge Transfer",
+    description:
+      "42% of institutional knowledge walks out the door when an employee leaves. Exit Insights captures it before they go.",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 

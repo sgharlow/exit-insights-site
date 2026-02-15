@@ -76,7 +76,7 @@ export default function SamplePage() {
         {/* Table of Contents */}
         <div className="mt-8 rounded-lg border border-gray-200 bg-white p-6">
           <h2 className="font-semibold text-gray-900">
-            Package Contents (10 Documents)
+            Package Contents (11 Documents)
           </h2>
           <div className="mt-3 grid gap-1 text-sm sm:grid-cols-2">
             <a href="#executive-summary" className="text-blue-700 hover:underline">
@@ -91,23 +91,26 @@ export default function SamplePage() {
             <a href="#security-review" className="text-blue-700 hover:underline">
               4. Security Review
             </a>
+            <a href="#integrity-report" className="text-blue-700 hover:underline">
+              5. Integrity Report
+            </a>
             <a href="#relationship-map" className="text-blue-700 hover:underline">
-              5. Relationship Map
+              6. Relationship Map
             </a>
             <a href="#interview-guide" className="text-blue-700 hover:underline">
-              6. Interview Guide
+              7. Interview Guide
             </a>
             <a href="#transfer-matrix" className="text-blue-700 hover:underline">
-              7. Transfer Matrix
+              8. Transfer Matrix
             </a>
             <a href="#access-revocation" className="text-blue-700 hover:underline">
-              8. Access Revocation
+              9. Access Revocation
             </a>
             <a href="#first-30-days" className="text-blue-700 hover:underline">
-              9. First 30 Days Plan
+              10. First 30 Days Plan
             </a>
             <span className="text-gray-500">
-              10. Processing Manifest (JSON)
+              11. Processing Manifest (JSON)
             </span>
           </div>
         </div>
@@ -547,9 +550,101 @@ export default function SamplePage() {
             </DocSection>
           </div>
 
-          {/* 5. Relationship Map */}
+          {/* 5. Integrity Report */}
+          <div id="integrity-report">
+            <DocSection title="5. Integrity Report (Excerpt)" badge="Confidential">
+              <div className="rounded border border-amber-200 bg-amber-50 p-3 text-xs italic text-amber-800">
+                These findings are automated pattern detections, not evidence of
+                wrongdoing. Many flagged patterns have routine explanations.
+                Review each finding in context.
+              </div>
+
+              <p className="mt-3 text-sm text-gray-500">
+                3 patterns detected: 1 MEDIUM, 2 LOW. Overall assessment: LOW
+                RISK.
+              </p>
+
+              <div className="mt-4 space-y-4">
+                <div className="rounded border border-amber-100 bg-amber-50/50 p-4">
+                  <h4 className="text-sm font-bold">
+                    After-Hours Bulk Commit —{" "}
+                    <span className="text-amber-700">MEDIUM</span>
+                  </h4>
+                  <div className="mt-2 space-y-1 text-sm">
+                    <p>
+                      <strong>Type:</strong> after_hours_bulk
+                    </p>
+                    <p>
+                      <strong>Repository:</strong> code-repo
+                    </p>
+                    <p>
+                      <strong>Date:</strong> 2026-01-28 23:47 UTC
+                    </p>
+                    <p>
+                      <strong>Detail:</strong> 14 files changed in a single
+                      commit at 11:47 PM, outside normal working hours
+                      (9AM-6PM).
+                    </p>
+                    <p>
+                      <strong>Evidence:</strong>{" "}
+                      <code className="rounded bg-gray-100 px-1 text-xs">
+                        git log --after=&quot;2026-01-28 22:00&quot;
+                        --before=&quot;2026-01-29 06:00&quot;
+                      </code>
+                    </p>
+                    <p>
+                      <strong>Cross-Reference:</strong> Slack message from Jane
+                      on Jan 28: &quot;pushing the staging fix tonight so we
+                      don&apos;t block QA tomorrow&quot;{" "}
+                      <span className="text-xs text-gray-400">
+                        [Source: Slack #project-alpha]
+                      </span>
+                    </p>
+                    <p>
+                      <strong>Likely Explanation:</strong> Urgent staging fix
+                      before next-day QA cycle. Corroborated by Slack message.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="rounded border border-gray-200 bg-gray-50 p-4">
+                  <h4 className="text-sm font-bold">
+                    Config File Modification —{" "}
+                    <span className="text-gray-600">LOW</span>
+                  </h4>
+                  <div className="mt-2 space-y-1 text-sm">
+                    <p>
+                      <strong>Type:</strong> config_change
+                    </p>
+                    <p>
+                      <strong>Repository:</strong> code-repo
+                    </p>
+                    <p>
+                      <strong>Date:</strong> 2026-02-10
+                    </p>
+                    <p>
+                      <strong>Detail:</strong> production.json modified — API
+                      key value changed. Change made during final 3 weeks.
+                    </p>
+                    <p>
+                      <strong>Likely Explanation:</strong> Routine key rotation
+                      as part of quarterly security cycle.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-4 rounded bg-gray-50 p-3 text-xs text-gray-600">
+                <strong>Assessment:</strong> LOW RISK — all 3 detected patterns
+                have routine explanations corroborated by other artifacts. No
+                deleted files, force pushes, or bulk deletions found.
+              </div>
+            </DocSection>
+          </div>
+
+          {/* 6. Relationship Map */}
           <div id="relationship-map">
-            <DocSection title="5. Relationship Map (Excerpt)">
+            <DocSection title="6. Relationship Map (Excerpt)">
               <p className="text-sm text-gray-500">
                 14 contacts mapped (9 internal, 5 external). Showing key
                 contacts.
@@ -637,9 +732,9 @@ export default function SamplePage() {
             </DocSection>
           </div>
 
-          {/* 6. Interview Guide */}
+          {/* 7. Interview Guide */}
           <div id="interview-guide">
-            <DocSection title="6. Interview Guide (Excerpt)">
+            <DocSection title="7. Interview Guide (Excerpt)">
               <p className="text-sm text-gray-500">
                 32 questions across 3 sessions. Showing Session 1.
               </p>
@@ -702,9 +797,9 @@ export default function SamplePage() {
             </DocSection>
           </div>
 
-          {/* 7. Transfer Matrix */}
+          {/* 8. Transfer Matrix */}
           <div id="transfer-matrix">
-            <DocSection title="7. Transfer Matrix (Excerpt)">
+            <DocSection title="8. Transfer Matrix (Excerpt)">
               <p className="text-sm text-gray-500">
                 26 items requiring transfer. Showing Active Projects section.
               </p>
@@ -798,10 +893,10 @@ export default function SamplePage() {
             </DocSection>
           </div>
 
-          {/* 8. Access Revocation */}
+          {/* 9. Access Revocation */}
           <div id="access-revocation">
             <DocSection
-              title="8. Access Revocation (Excerpt)"
+              title="9. Access Revocation (Excerpt)"
               badge="Confidential"
             >
               <p className="text-sm text-gray-500">
@@ -867,9 +962,9 @@ export default function SamplePage() {
             </DocSection>
           </div>
 
-          {/* 9. First 30 Days */}
+          {/* 10. First 30 Days */}
           <div id="first-30-days">
-            <DocSection title="9. First 30 Days Plan (Excerpt)">
+            <DocSection title="10. First 30 Days Plan (Excerpt)">
               <p className="text-sm text-gray-500">
                 4-week successor action plan. Showing Week 1.
               </p>
