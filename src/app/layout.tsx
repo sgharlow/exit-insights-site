@@ -22,6 +22,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  icons: {
+    icon: "/icon.svg",
+  },
   openGraph: {
     title: "Exit Insights — AI-Powered Employee Knowledge Transfer",
     description:
