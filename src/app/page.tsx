@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { EmailCapture } from "@/components/email-capture";
+import { ContactForm } from "@/components/contact-form";
 
 export default function Home() {
   return (
@@ -32,7 +34,7 @@ export default function Home() {
         </p>
         <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
           <a
-            href="#pricing"
+            href="#contact"
             className="rounded-lg bg-gray-900 px-6 py-3 text-base font-medium text-white transition hover:bg-gray-700"
           >
             Schedule a Consultation
@@ -50,6 +52,12 @@ export default function Home() {
           </Link>{" "}
           from a fictional employee departure.
         </p>
+        <div className="mx-auto mt-10 max-w-lg">
+          <p className="mb-3 text-sm text-gray-500">
+            Get notified when we launch new features.
+          </p>
+          <EmailCapture />
+        </div>
       </section>
 
       {/* Problem Stats */}
@@ -327,7 +335,7 @@ export default function Home() {
             ))}
           </ul>
           <a
-            href="mailto:sgharlow@gmail.com?subject=Exit%20Insights%20—%20Consultation%20Request"
+            href="#contact"
             className="mt-8 inline-block rounded-lg bg-gray-900 px-6 py-3 text-base font-medium text-white transition hover:bg-gray-700"
           >
             Schedule a Consultation
@@ -382,6 +390,20 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Contact Form */}
+      <section id="contact" className="mx-auto max-w-2xl px-6 py-20">
+        <h2 className="text-center text-3xl font-bold tracking-tight">
+          Get in Touch
+        </h2>
+        <p className="mx-auto mt-4 max-w-lg text-center text-gray-600">
+          Ready to protect your institutional knowledge? Tell us about your
+          needs and we&apos;ll get back to you within one business day.
+        </p>
+        <div className="mt-10">
+          <ContactForm />
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="py-12 text-center text-sm text-gray-400">
         <p>&copy; 2026 Exit Insights. All rights reserved.</p>
@@ -399,7 +421,7 @@ export default function Home() {
           </Link>
           <span>|</span>
           <a
-            href="mailto:sgharlow@gmail.com"
+            href="#contact"
             className="transition hover:text-gray-600"
           >
             Contact
